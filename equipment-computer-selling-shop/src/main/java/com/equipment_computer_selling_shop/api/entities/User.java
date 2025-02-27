@@ -12,7 +12,7 @@ import lombok.Setter;
 public class User {
 
 	@Id
-	@Column(length = 13)
+	@Column(columnDefinition = "CHAR(12)")
 	private String id;
 	
 	@Column(length = 100, nullable = false)

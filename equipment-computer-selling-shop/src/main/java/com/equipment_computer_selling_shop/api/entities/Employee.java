@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,5 +34,8 @@ public class Employee extends User {
 	@ManyToOne
 	@JoinColumn(name = "sdist_id", referencedColumnName = "id", nullable = false)
 	private Subdistrict subdistrict;
+	
+	@OneToOne(mappedBy = "employee")
+	private PasswordResetToken passwordResetToken;
 
 }
